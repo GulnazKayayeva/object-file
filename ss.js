@@ -53,9 +53,12 @@ let arr = [
     }
 ]
 
-for(let item of arr) {
-    item.sl = item.price*0.8
-}
 
+for(let item of arr) {
+    item.price = +item.price
+    item.sl = (item.price)*0.8
+    
+    
+}
 console.log(arr);
 
