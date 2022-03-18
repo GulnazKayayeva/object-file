@@ -1,62 +1,61 @@
-let user = {
-    name: 'Daler',
-    surname: 'Muinjonov',
-    age: 15,
-    isMarried: true,
-    hairColor: 'rijiy'
+let discount = 20
+
+let arr = [
+    {
+        id: 1,
+        elem: 'Bread',
+        price: '5000'   
+    },
+    {
+        id: 2,
+        elem: 'pizza',
+        price: '50000'   
+    },
+    {
+        id: 3,
+        elem: 'water',
+        price: '10000'   
+    },
+    {
+        id: 4,
+        elem: 'meat',
+        price: '80000'   
+    },
+    {
+        id: 5,
+        elem: 'egs',
+        price: '35000'   
+    },
+    {
+        id: 6,
+        elem: 'rolton',
+        price: '5000'   
+    },
+    {
+        id: 7,
+        elem: 'maslo',
+        price: '18000'   
+    },
+    {
+        id: 8,
+        elem: 'ramyon',
+        price: '22000'   
+    },
+    {
+        id: 9,
+        elem: 'tvorog',
+        price: '7000'   
+    },
+    {
+        id: 10,
+        elem: 'vodka',
+        price: '10000'   
+    }
+]
+
+for(let item of arr) {
+    item.sl = item.price*0.8
 }
 
+console.log(arr);
 
-let money = {
-    auto: 30000,
-    food: 50000,
-    friends: 100000,
-    expenses: [{
-        house: 1000000
-    }],
-    hairColor: 'red'
-}
-
-
-// Соеденить два объекта в один 
-// Достать все его значения 
-// Отфильровать массив по типам данных в соответсвующие переменные
-// и найти элемент которго больше всего в массиве
-
-//1
-
-let newObj = Object.assign(user, money)
-
-//2
-
-let entries = Object.entries(user)
-
-console.log(entries);
-
-//3
-
-let val = Object.values(user)
-
-console.log(val);
-
-
-
-let num = val.filter(item => typeof(item) === 'number')
-
-console.log(num);
-
-let strings = val.filter(item => typeof(item) === 'string')
-
-console.log(strings);
-
-let bool = val.filter(item => typeof(item) === 'boolean')
-
-console.log(bool);
-
-let obj = val.filter(item => typeof(item) === 'object')
-
-console.log(obj);
-
-//4
-
-console.log('элемент,которого больше - '+Math.max(num.length, obj.length, strings.length, bool.length)+ ' '+typeof(Math.max(num.length, obj.length, strings.length, bool.length)));
